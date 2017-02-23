@@ -20,7 +20,7 @@
                     Client Lists
                 </div>
                 <div class="panel-body" ng-app="postdata">
-                    {{postdata.message }}
+                    {{datas.name}}
                 </div>
             </div>
         </div>

@@ -19,8 +19,8 @@ dashboard.controller("ClientsController", ['$rootScope', '$scope', '$state', '$l
                 if (data == "success") {
                     Flash.create('success', 'Message Sent Succesfully', 'large-text');
                     vm.message = {};
-                    vm.contactForm.$pristine();
-                    vm.contactForm.$setUntouched();
+                    vm.clientForm.$pristine();
+                    vm.clientForm.$setUntouched();
 
                 }
             });

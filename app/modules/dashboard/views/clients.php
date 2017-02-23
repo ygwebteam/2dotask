@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form data-ng-submit="vm.submitForm();" name="vm.contactForm">
+                    <form data-ng-submit="vm.submitForm();" name="vm.clientForm">
                         <md-content class="autoScroll">
                             <md-input-container class="md-icon-float md-block">
                                 <label>Name</label>

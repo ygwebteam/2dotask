@@ -1,3 +1,5 @@
+
+
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -17,8 +19,8 @@
                 <div class="panel-heading">
                     Client Lists
                 </div>
-                <div class="panel-body">
-
+                <div class="panel-body" ng-app="postdata">
+                    {{postdata.message }}
                 </div>
             </div>
         </div>
@@ -39,7 +41,7 @@
 
 
                             <div class="pull-right">
-                                <md-button class="md-raised md-primary" type="submit">Send <i class="fa fa-angle-double-right"></i></md-button>
+                                <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="postdata($index);">Send <i class="fa fa-angle-double-right"></i></md-button>
                                 <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                             </div>
                         </md-content>

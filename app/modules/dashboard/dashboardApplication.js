@@ -28,7 +28,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     //clients page state
     $stateProvider.state('app.Clients', {
         url: '/clients',
-        templateUrl: 'app/modules/dashboard/views/skills.html',
+        templateUrl: 'app/modules/dashboard/views/clients.php',
         controller: 'SkillController',
         controllerAs: 'vm',
         data: {

@@ -64,16 +64,16 @@
                 <h4 class="modal-title">Add Client</h4>
             </div>
             <div class="modal-body">
-                <form name="clientForm" ng-controller="ClientController">
+                <form name="clientForm" id="clientForm" ng-submit="insertData(data);">
                     <md-content class="autoScroll">
                         <md-input-container class="md-icon-float md-block">
                             <label>Client Name</label>
                             <md-icon class="fa fa-user"></md-icon>
-                            <input type="text" required name="name" ng-model="cname">
+                            <input type="text" required name="name" ng-model="data.cname">
                         </md-input-container>
 
                         <div class="pull-right">
-                            <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData()">Add <i class="fa fa-save"></i></md-button>
+                            <md-button class="md-raised md-primary" type="submit" name="submit">Add <i class="fa fa-save"></i></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>

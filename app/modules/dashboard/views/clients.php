@@ -1,4 +1,23 @@
+<?php
+include('/includes/config.php');
 
+if(isset($_POST['submit']))
+{
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+$client_name = $request->name;
+echo $client_name;
+$sql = "INSERT INTO client (admin_id, client_name)
+VALUES ('17', $client_name)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
+
+?>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -24,7 +43,7 @@
                         <li> {{datas.name}}
                             <ul class="projects_name">
                                 <li>
-                                    
+
                                 </li>
                             </ul>
                         </li>  
@@ -49,7 +68,7 @@
 
 
                             <div class="pull-right">
-                                <md-button class="md-raised md-primary" type="submit" name="submit" >Send <i class="fa fa-angle-double-right"></i></md-button>
+                                <md-button class="md-raised md-primary" type="submit" name="submit" value="submit" ng-click="insertData()">Send <i class="fa fa-angle-double-right"></i></md-button>
                                 <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                             </div>
                         </md-content>

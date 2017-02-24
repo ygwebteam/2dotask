@@ -16,7 +16,7 @@
                     var request = $http({
                         method: "post",
                         url: "/2dotask-angular/2dotask/#/app/clients",
-                        data: vm.message,
+                        data:{name : vm.message} ,
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                     }).success(function () {
                         console.log(vm.message);

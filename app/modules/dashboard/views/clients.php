@@ -1,23 +1,4 @@
-<?php
-include('/includes/config.php');
 
-if(isset($_POST['submit']))
-{
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
-$client_name = $request->name;
-echo $client_name;
-$sql = "INSERT INTO client (admin_id, client_name)
-VALUES ('17', $client_name)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-}
-
-?>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -83,16 +64,16 @@ if ($conn->query($sql) === TRUE) {
                 <h4 class="modal-title">Add Client</h4>
             </div>
             <div class="modal-body">
-                <form data-ng-submit="vm.submitForm();" name="vm.clientForm">
+                <form name="clientForm" ng-controller="ClientController">
                     <md-content class="autoScroll">
                         <md-input-container class="md-icon-float md-block">
                             <label>Client Name</label>
                             <md-icon class="fa fa-user"></md-icon>
-                            <input type="text" required name="name" data-ng-model="vm.message.name">
+                            <input type="text" required name="name" ng-model="cname">
                         </md-input-container>
 
                         <div class="pull-right">
-                            <md-button class="md-raised md-primary" type="submit" name="submit" >Add <i class="fa fa-save"></i></md-button>
+                            <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData()">Add <i class="fa fa-save"></i></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>

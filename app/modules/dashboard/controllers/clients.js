@@ -26,22 +26,16 @@
 
             }]);
 dashboard.controller('ClientController', function ($scope, $http) {
-    $scope.errors = [];
-    $scope.msgs = [];
-    $scope.insertData = function () {
-        $http.post('clients.php', {'bname': $scope.cname})
+$scope.errors = [];
+        $scope.msgs = [];
+        $scope.insertData = function (client) {
+        $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/clients.php', {"bname": client.cname})
 
-                .success(function (data, status, headers, config) {
-                    if (data.msg != '')
-                    {
-                        $scope.msgs.push(data.msg);
-                    } else
-                    {
-                        $scope.errors.push(data.error);
-                    }
-                }).error(function (data, status) {
-            $scope.errors.push(status);
+                .success(function (data) {
+                if (data === true) {
+                //getInfo();
+                }
+                console.log(data);
+                });
+            };
         });
-        console.log($scope.cname);
-    };
-});

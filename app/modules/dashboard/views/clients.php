@@ -1,10 +1,8 @@
 
-
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
         Client
-
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -23,38 +21,20 @@
                     </span>
                 </div>
                 <div class="panel-body">
-                    <ul class="clients_name">
-                        <li> Client Name {{datas.name}}
-                            <ul class="projects_name">
-                                <li>Project Name</li>
-                            </ul>
-                        </li>  
-                    </ul>
-
                     <accordion close-others="true">
-
                         <accordion-group is-open="true">
-
                             <accordion-heading>
-                                header 1 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                                Client Name {{datas.name}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-
-                            <p>
-                                1st
-                            </p>
-
+                            <p> Project Name</p>
                         </accordion-group>
-
                         <accordion-group>
                             <accordion-heading>
                                 header2 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-
                             <p>2nd
                             </p>
-
                         </accordion-group>
-
 
                     </accordion>
                 </div>
@@ -75,7 +55,6 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog" >
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -86,14 +65,13 @@
                 <form data-ng-submit="vm.submitForm();" name="vm.clientForm">
                     <md-content class="autoScroll">
                         <md-input-container class="md-icon-float md-block">
-                            <label>Name</label>
+                            <label>Client Name</label>
                             <md-icon class="fa fa-user"></md-icon>
                             <input type="text" required name="name" data-ng-model="vm.message.name">
                         </md-input-container>
 
-
                         <div class="pull-right">
-                            <md-button class="md-raised md-primary" type="submit" name="submit" >Add Client <i class="fa fa-angle-double-right"></i></md-button>
+                            <md-button class="md-raised md-primary" type="submit" name="submit" >Add <i class="fa fa-save"></i></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>
@@ -103,12 +81,11 @@
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>-->
         </div>
-
     </div>
 </div>
 <script type="text/javascript">
             function openModel() {
                 $('#myModal').modal('show');
             }
-
+            
 </script>

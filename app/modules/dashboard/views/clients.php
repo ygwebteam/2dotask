@@ -20,7 +20,15 @@
                     Client Lists
                 </div>
                 <div class="panel-body">
-                    {{datas.name}}
+                    <ul class="clients_name">
+                        <li> {{datas.name}}
+                            <ul class="projects_name">
+                                <li>
+                                    
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
                 </div>
             </div>
         </div>

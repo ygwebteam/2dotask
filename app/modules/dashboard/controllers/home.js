@@ -43,13 +43,13 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
 		{
             title: "Ongoing Task",
             value: "0",
-            theme: "yellow",
+            theme: "blue",
             icon: "glass"
         },
 		{
             title: "Response tasks",
             value: "0",
-            theme: "yellow",
+            theme: "gray",
             icon: "glass"
         },
 

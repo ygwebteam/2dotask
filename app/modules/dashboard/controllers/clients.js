@@ -16,11 +16,21 @@
 
                         .success(function (data) {
                             if (data === true) {
-                              
+
                             }
                             console.log(data);
                         });
-                        swal("Succesfully added Client",'','success');
-                        //$location.reload();
+                swal("Succesfully added Client", '', 'success');
+                //$location.reload();
             };
         });
+dashboard.controller('ClientController', function ($scope, $http) {
+    //getInfo();
+    function getInfo() {
+// Sending request to EmpDetails.php files
+        $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getclients.php').success(function (data) {
+// Stored the returned data into scope
+            $scope.clientdetails = data;
+        });
+    }
+});

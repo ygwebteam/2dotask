@@ -24,18 +24,18 @@
                 <div class="panel-body">
                     <accordion close-others="true">
                         <accordion-group is-open="true">
-                            <accordion-heading>
-                                Client Name {{datas.name}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                            <accordion-heading ng-repeat="clientdetail in clientdetails | filter:search_query">
+                                {{clientdetail.name}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-                            <p> Project Name</p>
+<!--                            <p> 2dotask</p>-->
                         </accordion-group>
-                        <accordion-group>
-                            <accordion-heading>
-                                header2 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-                            </accordion-heading>
-                            <p>2nd
-                            </p>
-                        </accordion-group>
+                        <!--                        <accordion-group>
+                                                    <accordion-heading>
+                                                        Qatar karthik <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                                                    </accordion-heading>
+                                                    <p>Telp</p>
+                                                    <p>Thirukural</p>
+                                                </accordion-group>-->
 
                     </accordion>
                 </div>
@@ -86,8 +86,8 @@
     </div>
 </div>
 <script type="text/javascript">
-            function openModel() {
-                $('#myModal').modal('show');
-            }
-            
+    function openModel() {
+        $('#myModal').modal('show');
+    }
+
 </script>

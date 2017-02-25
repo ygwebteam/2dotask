@@ -103,7 +103,7 @@
                     Search Result Project(s)
                 </div>
                 <div class="panel-body">
-                    
+                    <p></p>
                 </div>
             </div>
         </div>

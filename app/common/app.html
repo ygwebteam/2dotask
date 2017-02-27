@@ -22,6 +22,11 @@
                         </a>
                     </li>
                     <li class="dropdown notifications-menu hidden-xs hidden-sm">
+                        <a href="javascript:;" onclick="AssignTask();">
+                            <i class="fa fa-plus"></i> Assign Task
+                        </a>
+                    </li>
+                    <li class="dropdown notifications-menu hidden-xs hidden-sm">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-align-justify"></i> Layouts
                         </a>
@@ -37,22 +42,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown notifications-menu">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-gears"></i> Themes
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <ul class="menu">
-                                    <li data-ng-repeat="theme in vm.themes" data-ng-click="vm.setTheme(theme.color);">
-                                        <a>
-                                            <i class="fa fa-flag{{theme.icon}} text-{{theme.theme}}"></i>{{theme.title}}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown">
@@ -62,7 +52,7 @@
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                
+
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
@@ -171,29 +161,96 @@
                             <label>Date of Join</label>
                             <input type="text" required name="dobj" ng-model="dobj">
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>Designation</label>
                             <input type="text" required name="designation" ng-model="designation">
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>Employee ID</label>
                             <input type="text" required name="eid" ng-model="eid">
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>User Name(Email ID)</label>
                             <input type="text" required name="uname" ng-model="uname">
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>Password</label>
                             <input type="password" required name="pass" ng-model="pass">
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>Confirm Password</label>
                             <input type="password" required name="cpass" ng-model="cpass">
                         </md-input-container>
-                        
+
                         <div class="pull-right">
                             <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData()">Add Staff <i class="fa fa-save"></i></md-button>
+                            <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
+                        </div>
+                    </md-content>
+                </form>
+            </div>
+            <!--<div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>-->
+        </div>
+    </div>
+</div>
+<!--assign task modal -->
+<div id="assignTask" class="modal fade" role="dialog" >
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Assign Task</h4>
+            </div>
+            <div class="modal-body">
+                <form name="clientForm" ng-controller="ClientController">
+                    <md-content class="autoScroll">
+
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Start Date</label>
+                            <input type="text" required name="dob" ng-model="dob">
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block">
+                            <label>End Date & Time</label>
+                            <input type="text" required name="dob" ng-model="dob">
+                        </md-input-container>
+                        <md-input-container class="md-block">
+
+                            <md-radio-group ng-model="data.group1">
+                                <md-radio-button name="gender" value="Male"   required> Staff <a href="javascript:;">All</a></md-radio-button> 
+                                <md-radio-button name="gender" value="Female" required> Team</md-radio-button>
+                            </md-radio-group>
+                        </md-input-container>
+                        <md-input-container>
+                            <md-select ng-model="StName" placeholder="Select">
+                                <md-option ng-value="1" >1</md-option>
+                                <md-option ng-value="2" >2</md-option>
+                                <md-option ng-value="3" >3</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container>
+                            <md-select ng-model="Sclient" placeholder="Select a client">
+                                <md-option ng-value="1" >1</md-option>
+                                <md-option ng-value="2" >2</md-option>
+                                <md-option ng-value="3" >3</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container>
+                            <md-select ng-model="Sproject" placeholder="Select a project">
+                                <md-option ng-value="1" >1</md-option>
+                                <md-option ng-value="2" >2</md-option>
+                                <md-option ng-value="3" >3</md-option>
+                            </md-select>
+                        </md-input-container>
+                         <md-input-container class="md-icon-float md-block">
+                            <label>Task Details</label>
+                            <input type="text" required name="dob" ng-model="dob">
+                        </md-input-container>
+                        <div class="pull-right">
+                            <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData()">Assign <i class="fa fa-save"></i></md-button>
+                            <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData1()">Save Text <i class="fa fa-save"></i></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>
@@ -208,5 +265,8 @@
 <script type="text/javascript">
             function AddStaff() {
                 $('#addStaff').modal('show');
+            }
+            function AssignTask() {
+                $('#assignTask').modal('show');
             }
 </script>

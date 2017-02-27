@@ -9,31 +9,43 @@
  ===========================================================*/
 
         dashboard.controller('ClientController', function ($scope, $http) {
+            getInfo();
+            $scope.clientdetails = [];
+            function getInfo() {
+// Sending request to EmpDetails.php files
+                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getclients.php').success(function (data) {
+// Stored the returned data into scope
+
+                    $scope.clientdetails = data;
+                    //console.log(data);
+                });
+            }
             $scope.errors = [];
             $scope.msgs = [];
-            $scope.insertData = function (client) {
-                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/clients.php', {"bname": client.cname})
+            $scope.insertData = function (info) {
+                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/clients.php', {"bname": info.cname})
 
                         .success(function (data) {
-                            if (data === true) {
-
-                            }
                             console.log(data);
+                            $('#myModal').modal('hide');
+                            getInfo();
                         });
+
+
                 swal("Succesfully added Client", '', 'success');
                 //$location.reload();
             };
+            $scope.showProjectDetails = function (data)
+            {
+                 console.log(data.id); 
+                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getprojectdetail.php', {"id": data.id})
+                        .success(function(res)
+                {
+                   
+                   console.log(res); 
+                });
+            };
         });
-dashboard.controller('ClientController', function ($scope, $http) {
-    getInfo();
-    $scope.clientdetails=[];
-    function getInfo() {
-// Sending request to EmpDetails.php files
-        $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getclients.php').success(function (data) {
-// Stored the returned data into scope
 
-            $scope.clientdetails = data;
-            // console.log(data);
-        });
-    }
-});
+
+

@@ -33,16 +33,16 @@
 
 
                 swal("Succesfully added Client", '', 'success');
-                //$location.reload();
             };
+
             $scope.showProjectDetails = function (data)
             {
-                 console.log(data.id); 
-                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getprojectdetail.php', {"id": data.id})
-                        .success(function(res)
+                //console.log(data); 
+                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getprojectdetail.php', {"id": data}).success(function (res)
                 {
-                   
-                   console.log(res); 
+                    $scope.getprojectdetail = res;
+                    //console.log($scope.getprojectdetail);
+                    //console.log(res);
                 });
             };
         });

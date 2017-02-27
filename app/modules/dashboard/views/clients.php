@@ -21,13 +21,13 @@
                             <a href="javascript:;" class="btn btn-success btn-xs" onclick="openModel();"><i class="fa fa-plus"></i></a>
                         </span>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" style="overflow: scroll; height: 410px;">
                         <accordion close-others="true">
                             <accordion-group ng-repeat="clientdetail in clientdetails">
                                 <accordion-heading>
                                     <div id="{{clientdetail.id}}">{{clientdetail.client_name}}</div><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                                 </accordion-heading>
-                                <p ng-repeat="projects in clientdetail.projects" ><a href="#" ng-click="showProjectDetails($id)" id="{{projects.id}}" data="{{projects.id}}">{{projects.project_name}}</a></p>
+                                <p ng-repeat="projects in clientdetail.projects" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}" data="{{projects.id}}">{{projects.project_name}}</a></p><button onclick="addProject();"><i class="fa fa-plus">Add Project</i></button>
                             </accordion-group>
                         </accordion>
                     </div>
@@ -39,7 +39,9 @@
                         Client Project(s)
                     </div>
                     <div class="panel-body">
-                        <p>Project Details</p>
+                        <p>Name : {{getprojectdetail[0].project_name}}</p>
+                        <p>Description : {{getprojectdetail[0].project_description}}</p>
+                        
 
                     </div>
                 </div>
@@ -77,9 +79,42 @@
             </div>
         </div>
     </div>
+     <div id="addProject" class="modal fade" role="dialog" >
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Client</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="ng-submitted" name="clientForm" id="clientForm" ng-submit="insertData(data);">
+                        <md-content class="autoScroll">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Client Name</label>
+                                <md-icon class="fa fa-user"></md-icon>
+                                <input type="text" required name="name" ng-model="data.cname">
+                            </md-input-container>
+
+                            <div class="pull-right">
+                                <md-button class="md-raised md-primary" type="submit" name="submit">Add <i class="fa fa-save"></i></md-button>
+                                <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
+                            </div>
+                        </md-content>
+                    </form>
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
         function openModel() {
             $('#myModal').modal('show');
+        }
+        function addProject() {
+            $('#addProject').modal('show');
         }
 
     </script>

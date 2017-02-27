@@ -25,12 +25,15 @@
             };
         });
 dashboard.controller('ClientController', function ($scope, $http) {
-    //getInfo();
+    getInfo();
+    $scope.clientdetails=[];
     function getInfo() {
 // Sending request to EmpDetails.php files
         $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getclients.php').success(function (data) {
 // Stored the returned data into scope
+
             $scope.clientdetails = data;
+            // console.log(data);
         });
     }
 });

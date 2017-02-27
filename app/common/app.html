@@ -31,6 +31,7 @@
                             <i class="fa fa-plus"></i> Assign Task
                         </a>
                     </li>
+                   
                     <li class="dropdown notifications-menu hidden-xs hidden-sm">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-align-justify"></i> Layouts
@@ -188,7 +189,7 @@
                         </md-input-container>
 
                         <div class="pull-right">
-                            <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="insertData()">Add Staff <i class="fa fa-save"></i></md-button>
+                            <md-button class="md-raised md-primary" type="submit" name="staffSubmit" data-upd="update" ng-click="insertData()"></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>
@@ -249,7 +250,7 @@
                                 <md-option ng-value="3" >3</md-option>
                             </md-select>
                         </md-input-container>
-                         <md-input-container class="md-icon-float md-block">
+                        <md-input-container class="md-icon-float md-block">
                             <label>Task Details</label>
                             <input type="text" required name="dob" ng-model="dob">
                         </md-input-container>
@@ -270,11 +271,13 @@
 <script type="text/javascript">
             function AddStaff() {
                 $('#addStaff').modal('show');
-                $('#addStaff').find('modal-title').empty().html('Add Staff Details');
+                $('#addStaff').find('.modal-title').empty().html('Add Staff Details');
+                $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Staff <i class="fa fa-save"></i>');
             }
-            function NonStaff(){
+            function NonStaff() {
                 $('#addStaff').modal('show');
-                $('#addStaff').find('modal-title').empty().html('Add Non Staff Details');
+                $('#addStaff').find('.modal-title').empty().html('Add Non Staff Details');
+                $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Non Staff <i class="fa fa-save"></i>');
             }
             function AssignTask() {
                 $('#assignTask').modal('show');

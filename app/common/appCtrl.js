@@ -117,6 +117,16 @@ function ($rootScope, $scope, $state, $location, Flash,appSettings) {
             state: "dashboard"
         },
         {
+            title: "Team Details",
+            icon: "group",
+            state: "team-details"
+        },
+        {
+            title: "Task Template",
+            icon: "tasks",
+            state: "task-template"
+        },
+        {
             title: "Clients",
             icon: "gears",
             state: "Clients"

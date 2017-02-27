@@ -23,9 +23,9 @@
                 </div>
                 <div class="panel-body">
                     <accordion close-others="true">
-                        <accordion-group is-open="true">
-                            <accordion-heading ng-repeat="clientdetail in clientdetails | filter:search_query">
-                                {{clientdetail.name}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                        <accordion-group ng-repeat="clientdetail in clientdetails">
+                            <accordion-heading id="{{clientdetail.id}}">
+                                {{clientdetail.client_name}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
 <!--                            <p> 2dotask</p>-->
                         </accordion-group>

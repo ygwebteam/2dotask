@@ -30,11 +30,8 @@
                             $('#myModal').modal('hide');
                             getInfo();
                         });
-
-
                 swal("Succesfully added Client", '', 'success');
             };
-
             $scope.showProjectDetails = function (data)
             {
                 //console.log(data); 
@@ -44,6 +41,17 @@
                     //console.log($scope.getprojectdetail);
                     //console.log(res);
                 });
+            };
+                
+            $scope.insertproject = function (info) {
+                $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/addproject.php', {"pname": info.pname, "client_id": info.id, "desc": info.desc})
+
+                        .success(function (data) {
+                            console.log(data);
+                            $('#myModal').modal('hide');
+                            getInfo();
+                        });
+                swal("Succesfully added Client", '', 'success');
             };
         });
 

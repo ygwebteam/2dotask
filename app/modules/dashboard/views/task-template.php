@@ -16,7 +16,9 @@
                     View Template
                 </div>
                 <div class="panel-body">
-
+                    <p ng-repeat="template in templates">
+                        {{template.text}}
+                    </p>
 
                 </div>
             </div>
@@ -24,20 +26,21 @@
         <div class="col-md-6">
             <div class="panel panel-info" style="min-height:453px;">
                 <div class="panel-heading">
-                   Add New Template
+                    Add New Template
                 </div>
                 <div class="panel-body">
-                    <form name="clientForm" ng-controller="ClientController">
+
+                    <form class="ng-submitted" name="templateForm" id="templateForm" ng-submit="insertData(data);">
                         <md-content class="autoScroll">
 
                             <md-input-container class="md-icon-float md-block">
                                 <label>Template</label>
-                                <input type="text" required name="dob" ng-model="fdate">
+                                <input type="text" required name="addtemp" ng-model="data.addtemp">
                             </md-input-container>
 
                             <div class="col-md-12">
                                 <div class="pull-right">
-                                    <md-button class="md-raised md-primary" type="submit" name="submit" ng-click="filterData()"><strong>Add </strong> <i class="fa fa-plus"></i></md-button>
+                                    <md-button class="md-raised md-primary" type="submit" name="submit">Add <i class="fa fa-save"></i></md-button>
                                     <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                                 </div>
                             </div>

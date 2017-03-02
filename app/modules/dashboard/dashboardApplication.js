@@ -38,10 +38,10 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.task-template', {
         url: '/task-template',
         templateUrl: 'app/modules/dashboard/views/task-template.php',
-        controller: 'HomeController',
+        controller: 'taskTemplate',
         controllerAs: 'vm',
         data: {
-            pageTitle: 'Home'
+            pageTitle: 'Template'
         }
     });
 

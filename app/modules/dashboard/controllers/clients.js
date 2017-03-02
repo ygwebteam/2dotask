@@ -44,7 +44,7 @@
             };
             $scope.insertProject = function (info) {
                     console.log(info);
-                    var client_id = document.getElementsByName('client_id')[0].value
+                    var client_id = document.getElementsByName('client_id')[0].value;
                 $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/addproject.php', {"pname": info.pname, "client_id": client_id, "desc": info.desc})
 
                         .success(function (data) {

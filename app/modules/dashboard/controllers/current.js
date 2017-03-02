@@ -1,4 +1,4 @@
-dashboard.controller('not-completed', function ($scope, $http) {
+dashboard.controller('CurrentTaskControler', function ($scope, $http) {
     getcurrentTask();
     $scope.currenttask = [];
     function getcurrentTask() {

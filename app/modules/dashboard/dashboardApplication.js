@@ -71,7 +71,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.today', {
         url: '/today',
         templateUrl: 'app/modules/dashboard/views/today.php',
-        controller: 'today',
+        controller: 'CurrentTaskControler',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Today Tasks'

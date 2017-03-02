@@ -23,37 +23,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
                 pageTitle: 'Home'
             }
         });
-        //team details page state
-        $stateProvider.state('app.team-details', {
-            url: '/team-details',
-            templateUrl: 'app/modules/dashboard/views/team-details.php',
-            controller: 'HomeController',
-            controllerAs: 'vm',
-            data: {
-                pageTitle: 'Home'
-            }
-        });
-        //dashboard home page state
-        $stateProvider.state('app.task-template', {
-            url: '/task-template',
-            templateUrl: 'app/modules/dashboard/views/task-template.php',
-            controller: 'taskTemplate',
-            controllerAs: 'vm',
-            data: {
-                pageTitle: 'Home'
-            }
-        });
-    //dashboard home page state
-    $stateProvider.state('app.dashboard', {
-        url: '/dashboard',
-        templateUrl: 'app/modules/dashboard/views/home.html',
-        controller: 'HomeController',
-        controllerAs: 'vm',
-        data: {
-            pageTitle: 'Home'
-        }
-    });
-    //team details page state
+         //team details page state
     $stateProvider.state('app.team-details', {
         url: '/team-details',
         templateUrl: 'app/modules/dashboard/views/team-details.php',
@@ -67,7 +37,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.task-template', {
         url: '/task-template',
         templateUrl: 'app/modules/dashboard/views/task-template.php',
-        controller: 'taskTemplate',
+        controller: 'taskTemplateController',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Template'

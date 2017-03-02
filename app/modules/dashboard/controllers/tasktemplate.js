@@ -1,5 +1,5 @@
 
-dashboard.controller('taskTemplate', function ($scope, $http) {
+dashboard.controller('taskTemplateController', function ($scope, $http) {
     $scope.errors = [];
     $scope.msgs = [];
     $scope.insertData = function (info) {

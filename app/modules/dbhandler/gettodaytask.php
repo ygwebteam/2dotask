@@ -6,7 +6,7 @@ $cur_date = date('Y-m-d');
 //echo $cur_date;
 $id = 17;
 // mysqli query to fetch all data from database
-$query = "select `t`.* , `cl`.`client_name`,`pj`.`project_name` from `task` as `t` left join `client` as `cl` on `cl`.`id` = `t`.`client_id` left join `project` as `pj` on `pj`.`id` = `t`.`project_id` where `t`.`admin_id`= '" . $id . "' and (`t`.`start_date` = '" . $cur_date . "' or `t`.`end_date`='" . $cur_date . "')  order by `t`.`end_date` asc limit 15";
+$query = "select `t`.* , `cl`.`client_name`,`pj`.`project_name` from `task` as `t` left join `client` as `cl` on `cl`.`id` = `t`.`client_id` left join `project` as `pj` on `pj`.`id` = `t`.`project_id` where `t`.`admin_id`= '" . $id . "' and (`t`.`start_date` = '" . $cur_date . "' or `t`.`end_date`='" . $cur_date . "')  order by  `t`.`end_date` asc , `t`.`time` desc , `t`.`id` asc limit 15";
 $result = mysqli_query($con, $query);
 $task = array();
 if (mysqli_num_rows($result) != 0) {

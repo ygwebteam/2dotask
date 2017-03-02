@@ -27,7 +27,7 @@
                             <accordion-heading>
                                 <div id="{{clientdetail.id}}">{{clientdetail.client_name}}</div><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-                            <div ng-controller="ClientController"><button data-toggle="modal" id="{{clientdetail.id}}" onclick="addProject('clientdetail.id');"><i class="fa fa-plus">Add Project</i></button></div> <br/><br/>
+                            <button class="projectmodal" id="{{clientdetail.id}}" onclick="addProject(this.id)"><i class="fa fa-plus">Add Project</i></button> <br/><br/>
                             <p ng-repeat="projects in clientdetail.projects" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}">{{projects.project_name}}</a></p>
                         </accordion-group>
                     </accordion>
@@ -89,22 +89,22 @@
                 <h4 class="modal-title">Add Project</h4>
             </div>
             <div class="modal-body">
-                <form class="ng-submitted" name="projectform" id="projectform" ng-submit="insertProject(data);">
+                <form class="ng-submitted" name="projectform" id="projectform" ng-submit="insertProject(projectdata);">
                     <md-content class="autoScroll">
                         <md-input-container class="md-icon-float md-block hidden">
                             <label>Id</label>
                             <md-icon class="fa fa-user"></md-icon>
-                            <input type="text" required name="id" value="{{id}}" ng-model="data.id">
+                            <input type="text" id="client_id" name="client_id" ng-model="projectdata.cid">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Project Name</label>
                             <md-icon class="fa fa-user"></md-icon>
-                            <input type="text" required name="name" ng-model="data.pname">
+                            <input type="text" required name="name" ng-model="projectdata.pname">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Project Description</label>
                             <md-icon class="fa fa-user"></md-icon>
-                            <textarea required name="desc" ng-model="data.desc"></textarea>
+                            <textarea required name="desc" ng-model="projectdata.desc"></textarea>
                         </md-input-container>
 
                         <div class="pull-right">
@@ -124,8 +124,12 @@
     function openModel() {
         $('#myModal').modal('show');
     }
-    function addProject() {
-        $('#addProject').modal('show');
+    function addProject(clientId) {
+        var $modal = $('#addProjects'),
+                $clientID = $modal.find('#client_id');
+        $clientID.val(clientId);
+        $modal.modal("show");
+
     }
 
 </script>

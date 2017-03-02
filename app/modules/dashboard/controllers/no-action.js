@@ -1,7 +1,14 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+dashboard.controller('NoAction', function ($scope, $http) {
+    getcurrentTask();
+    $scope.currenttask = [];
+    function getcurrentTask() {
+// Sending request to EmpDetails.php files
+        $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/no-action.php').success(function (data) {
+// Stored the returned data into scope
 
+            $scope.currenttask = data;
+            console.log(data);
+        });
+    }
+});

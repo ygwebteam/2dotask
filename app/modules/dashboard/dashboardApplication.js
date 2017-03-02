@@ -82,7 +82,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.notcompleted', {
         url: '/not-completed',
         templateUrl: 'app/modules/dashboard/views/not-completed.php',
-        controller: 'not-completed',
+        controller: 'NotCompleted',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Not-completed'
@@ -115,7 +115,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.noaction', {
         url: '/no-action',
         templateUrl: 'app/modules/dashboard/views/no-action.php',
-        controller: 'no-action',
+        controller: 'NoAction',
         controllerAs: 'vm',
         data: {
             pageTitle: 'No-action'
@@ -137,7 +137,7 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state('app.completed', {
         url: '/completed',
         templateUrl: 'app/modules/dashboard/views/completed.php',
-        controller: 'WebsitesController',
+        controller: 'Completed',
         controllerAs: 'vm',
         data: {
             pageTitle: 'Completed Tasks'

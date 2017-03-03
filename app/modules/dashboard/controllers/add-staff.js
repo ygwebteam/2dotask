@@ -11,7 +11,7 @@ dashboard.controller('staffController', function ($scope, $http) {
                     .success(function (data) {
                         $('#addStaff').modal('hide');
                     });
-            swal("Succesfully added Template", '', 'success');
+            swal("Succesfully added Staff", '', 'success');
         }else{
             $scope.msgs = 'Password Mismatched';
         }

@@ -35,6 +35,7 @@
             $scope.showProjectDetails = function (data)
             {
                 //console.log(data); 
+                $scope.focusElement = "projectdetails"
                 $http.post('/2dotask-angular/2dotask/app/modules/dbhandler/getprojectdetail.php', {"id": data}).success(function (res)
                 {
                     $scope.getprojectdetail = res;

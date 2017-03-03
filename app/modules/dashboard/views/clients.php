@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" name="projectdetails">
             <div class="panel panel-info" style="min-height:453px;">
                 <div class="panel-heading">
                     Client Project(s)

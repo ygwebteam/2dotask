@@ -145,10 +145,7 @@
                             <label>Last Name</label>
                             <input type="text" required name="lname" ng-model="lname">
                         </md-input-container>
-                        <md-input-container class="md-icon-float md-block">
-                            <label>Date of Birth</label>
-                            <input type="text" required name="dob" ng-model="dob">
-                        </md-input-container>
+                        <md-datepicker ng-model="vm.message.dob" md-current-view="year" md-placeholder="Date of Birth"></md-datepicker>
                         <md-input-container class="md-block">
                             <md-radio-group ng-model="data.group1">
                                 <md-radio-button name="gender" value="Male"   required> Male</md-radio-button>
@@ -163,10 +160,7 @@
                             <label>Message</label>
                             <input type="text" required name="message" data-ng-model="vm.message.message">
                         </md-input-container>
-                        <md-input-container class="md-icon-float md-block">
-                            <label>Date of Join</label>
-                            <input type="text" required name="dobj" ng-model="dobj">
-                        </md-input-container>
+                        <md-datepicker ng-model="m.message.joining" md-current-view="year" md-placeholder="Date of Joining"></md-datepicker>
                         <md-input-container class="md-icon-float md-block">
                             <label>Designation</label>
                             <input type="text" required name="designation" ng-model="designation">

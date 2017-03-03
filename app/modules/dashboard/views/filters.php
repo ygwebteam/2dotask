@@ -19,8 +19,8 @@
                     <form name="clientForm" ng-submit="applyFilers(data)">
                         <md-content class="autoScroll">
 
-                            <md-datepicker ng-model="data.fdate" md-current-view="year" md-placeholder="Start date"></md-datepicker>
-                            <md-datepicker ng-model="data.edate" md-current-view="year" md-placeholder="End date"></md-datepicker>
+                            <md-datepicker ng-model="data.fdate" md-placeholder="Start date"></md-datepicker>
+                            <md-datepicker ng-model="data.edate"  md-placeholder="End date"></md-datepicker>
                             <br/>
                             <md-input-container>
                                 <md-select ng-model="data.staff" placeholder="Select a staff">

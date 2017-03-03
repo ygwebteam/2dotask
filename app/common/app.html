@@ -135,55 +135,55 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                <form name="clientForm" ng-controller="ClientController">
+                 <form name="clientForm" ng-controller="staffController" ng-submit="insertStaff(data);">
                     <md-content class="autoScroll">
                         <md-input-container class="md-icon-float md-block">
                             <label>First Name</label>
-                            <input type="text" required name="fname" ng-model="fname">
+                            <input type="text" required name="fname" ng-model="data.fname">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Last Name</label>
-                            <input type="text" required name="lname" ng-model="lname">
+                            <input type="text" required name="lname" ng-model="data.lname">
                         </md-input-container>
-                        <md-datepicker ng-model="vm.message.dob" md-current-view="year" md-placeholder="Date of Birth"></md-datepicker>
+                        <md-datepicker ng-model="data.dob" md-current-view="year" md-placeholder="Date of Birth"></md-datepicker>
                         <md-input-container class="md-block">
-                            <md-radio-group ng-model="data.group1">
+                            <md-radio-group ng-model="data.gender">
                                 <md-radio-button name="gender" value="Male"   required> Male</md-radio-button>
                                 <md-radio-button name="gender" value="Female" required> Female</md-radio-button>
                             </md-radio-group>
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Mobile</label>
-                            <input type="text" required name="mobile" ng-model="mobile">
+                            <input type="text" required name="mobile" ng-model="data.mobile">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
-                            <label>Message</label>
-                            <input type="text" required name="message" data-ng-model="vm.message.message">
+                            <label>Address</label>
+                            <input type="text" required name="address" ng-model="data.address">
                         </md-input-container>
-                        <md-datepicker ng-model="m.message.joining" md-current-view="year" md-placeholder="Date of Joining"></md-datepicker>
+                        <md-datepicker ng-model="data.dobj" md-current-view="year" md-placeholder="Date of Joining"></md-datepicker>
                         <md-input-container class="md-icon-float md-block">
                             <label>Designation</label>
-                            <input type="text" required name="designation" ng-model="designation">
+                            <input type="text" required name="designation" ng-model="data.designation">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Employee ID</label>
-                            <input type="text" required name="eid" ng-model="eid">
+                            <input type="text" required name="eid" ng-model="data.eid">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>User Name(Email ID)</label>
-                            <input type="text" required name="uname" ng-model="uname">
+                            <input type="email" required name="uname" ng-model="data.uname">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Password</label>
-                            <input type="password" required name="pass" ng-model="pass">
+                            <input type="password" required name="pass" ng-model="data.pass">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>Confirm Password</label>
-                            <input type="password" required name="cpass" ng-model="cpass">
+                            <input type="password" required name="cpass" ng-model="data.cpass">
                         </md-input-container>
 
                         <div class="pull-right">
-                            <md-button class="md-raised md-primary" type="submit" name="staffSubmit" data-upd="update" ng-click="insertData()"></md-button>
+                           <md-button class="md-raised md-primary" type="submit" name="staffSubmit">Add <i class="fa fa-save"></i></md-button>
                             <md-button class="md-raised md-warn" type="reset">Clear <i class="fa fa-trash-o"></i></md-button>
                         </div>
                     </md-content>

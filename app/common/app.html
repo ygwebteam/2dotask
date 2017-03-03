@@ -213,19 +213,15 @@
             <div class="modal-body">
                 <form name="clientForm" ng-controller="ClientController">
                     <md-content class="autoScroll">
-                        <md-input-container>
-                            <input time="true" date="true" mdc-datetime-picker="" type="text" id="startdate" placeholder="Date" ng-model="date" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
-                        </md-input-container>
-                        <md-input-container>
-                            <input time="true" date="true" mdc-datetime-picker="" type="text" id="startdate" placeholder="Date" ng-model="date" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
-                        </md-input-container>
+                        <md-datepicker ng-model="data.fdate" md-current-view="year" md-placeholder="Start date"></md-datepicker>
+                        <md-datepicker ng-model="data.edate" md-current-view="year" md-placeholder="End date"></md-datepicker><br/><br/>
                         <md-input-container class="md-icon-float md-block">
                             <label>Start Time</label>
-                            <input type="time" id="exampleInput" name="input" ng-model="example.value" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+                            <input mdc-datetime-picker date="false" time="true" type="text" id="starttime" short-time="true" show-todays-date placeholder="Start Time" min-date="minDate" format="hh:mm a" ng-change="vm.saveChange()" ng-model="starttime"/>
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
                             <label>End Time</label>
-                            <input type="time" id="exampleInput" name="input" ng-model="example.value" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+                            <input mdc-datetime-picker date="false" time="true" type="text" id="endtime" short-time="true" show-todays-date placeholder="End Time" min-date="minDate" format="hh:mm a" ng-change="vm.saveChange()" ng-model="endtime"/>
                         </md-input-container>
                         <md-input-container class="md-block">
 

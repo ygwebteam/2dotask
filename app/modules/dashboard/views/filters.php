@@ -18,14 +18,9 @@
                 <div class="panel-body">
                     <form name="clientForm" ng-submit="applyFilers(data)">
                         <md-content class="autoScroll">
-                            <md-input-container>
-                                <input time="false" date="true" mdc-datetime-picker type="text" id="startdate" placeholder="Start Date" ng-model="sdate" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
-                            </md-input-container>
-                            <md-input-container>
-                                <input time="false" date="true" mdc-datetime-picker type="text" id="enddate" placeholder="End Date" ng-model="edate" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
-                            </md-input-container>
 
-
+                            <md-datepicker ng-model="data.fdate" md-current-view="year" md-placeholder="Start date"></md-datepicker>
+                            <md-datepicker ng-model="data.edate" md-current-view="year" md-placeholder="End date"></md-datepicker>
                             <br/>
                             <md-input-container>
                                 <md-select ng-model="data.staff" placeholder="Select a staff">

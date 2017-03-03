@@ -74,5 +74,6 @@ a{
     color:#fff!important;
 }
 .navbar-static-top{background: #000 !important;}
+.md-datepicker-calendar-pane{z-index: 1050 !important}
 .md-dialog-container{z-index: 1050 !important}
 .md-select-menu-container{z-index: 1050 !important}

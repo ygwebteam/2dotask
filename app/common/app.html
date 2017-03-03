@@ -31,7 +31,7 @@
                             <i class="fa fa-plus"></i> Assign Task
                         </a>
                     </li>
-                   
+
                     <li class="dropdown notifications-menu hidden-xs hidden-sm">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-align-justify"></i> Layouts
@@ -213,14 +213,19 @@
             <div class="modal-body">
                 <form name="clientForm" ng-controller="ClientController">
                     <md-content class="autoScroll">
-
-                        <md-input-container class="md-icon-float md-block">
-                            <label>Start Date</label>
-                            <input type="text" required name="dob" ng-model="dob">
+                        <md-input-container>
+                            <input time="true" date="true" mdc-datetime-picker="" type="text" id="startdate" placeholder="Date" ng-model="date" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
+                        </md-input-container>
+                        <md-input-container>
+                            <input time="true" date="true" mdc-datetime-picker="" type="text" id="startdate" placeholder="Date" ng-model="date" min-date="minDate" max-date="maxDate" class=" md-input" readonly="readonly">
                         </md-input-container>
                         <md-input-container class="md-icon-float md-block">
-                            <label>End Date & Time</label>
-                            <input type="text" required name="dob" ng-model="dob">
+                            <label>Start Time</label>
+                            <input type="time" id="exampleInput" name="input" ng-model="example.value" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block">
+                            <label>End Time</label>
+                            <input type="time" id="exampleInput" name="input" ng-model="example.value" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
                         </md-input-container>
                         <md-input-container class="md-block">
 
@@ -269,17 +274,17 @@
     </div>
 </div>
 <script type="text/javascript">
-            function AddStaff() {
-                $('#addStaff').modal('show');
-                $('#addStaff').find('.modal-title').empty().html('Add Staff Details');
-                $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Staff <i class="fa fa-save"></i>');
-            }
-            function NonStaff() {
-                $('#addStaff').modal('show');
-                $('#addStaff').find('.modal-title').empty().html('Add Non Staff Details');
-                $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Non Staff <i class="fa fa-save"></i>');
-            }
-            function AssignTask() {
-                $('#assignTask').modal('show');
-            }
+    function AddStaff() {
+        $('#addStaff').modal('show');
+        $('#addStaff').find('.modal-title').empty().html('Add Staff Details');
+        $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Staff <i class="fa fa-save"></i>');
+    }
+    function NonStaff() {
+        $('#addStaff').modal('show');
+        $('#addStaff').find('.modal-title').empty().html('Add Non Staff Details');
+        $('#addStaff').find('[name="staffSubmit"]').empty().html('Add Non Staff <i class="fa fa-save"></i>');
+    }
+    function AssignTask() {
+        $('#assignTask').modal('show');
+    }
 </script>

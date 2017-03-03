@@ -9,7 +9,7 @@
  
  ===========================================================*/
 
-        var dashboard = angular.module('dashboard', ['ui.router', 'ngAnimate', 'ngMaterial']);
+        var dashboard = angular.module('dashboard', ['ui.router', 'ngAnimate', 'ngMaterialDatePicker']);
 
 dashboard.config(["$stateProvider", function ($stateProvider) {
 
@@ -23,26 +23,26 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
                 pageTitle: 'Home'
             }
         });
-         //team details page state
-    $stateProvider.state('app.team-details', {
-        url: '/team-details',
-        templateUrl: 'app/modules/dashboard/views/team-details.php',
-        controller: 'HomeController',
-        controllerAs: 'vm',
-        data: {
-            pageTitle: 'Home'
-        }
-    });
-    //dashboard home page state
-    $stateProvider.state('app.task-template', {
-        url: '/task-template',
-        templateUrl: 'app/modules/dashboard/views/task-template.php',
-        controller: 'taskTemplateController',
-        controllerAs: 'vm',
-        data: {
-            pageTitle: 'Template'
-        }
-    });
+        //team details page state
+        $stateProvider.state('app.team-details', {
+            url: '/team-details',
+            templateUrl: 'app/modules/dashboard/views/team-details.php',
+            controller: 'HomeController',
+            controllerAs: 'vm',
+            data: {
+                pageTitle: 'Home'
+            }
+        });
+        //dashboard home page state
+        $stateProvider.state('app.task-template', {
+            url: '/task-template',
+            templateUrl: 'app/modules/dashboard/views/task-template.php',
+            controller: 'taskTemplateController',
+            controllerAs: 'vm',
+            data: {
+                pageTitle: 'Template'
+            }
+        });
 
         //clients page state
         $stateProvider.state('app.Clients', {

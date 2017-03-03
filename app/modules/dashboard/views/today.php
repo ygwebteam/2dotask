@@ -23,7 +23,8 @@
                             <accordion-heading>
                                 <div id="{{currenttasks.id}}">{{currenttasks.project_name}} - {{currenttasks.task_details}}</div><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-                            <p ng-repeat="staff in currenttasks.staffs" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}" data="{{projects.id}}">{{staff.fname}} {{staff.lname}}</a></p><a href="#addProjects" data-toggle="modal" ng-click="addProject(projects.id);"></a>
+                            <a href="#addProjects" data-toggle="modal" ng-click="edittask(currenttasks.id);"></a>
+                            <p ng-repeat="staff in currenttasks.staffs" > Assigned Staff(s) - {{staff.fname}} {{staff.lname}}</p>
                         </accordion-group>
                     </accordion>
            </div>
@@ -40,7 +41,8 @@
                             <accordion-heading>
                                 <div id="{{currenttasks.id}}">{{currenttasks.project_name}} - {{currenttasks.task_details}}</div><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
-                            <p ng-repeat="staff in currenttasks.staffs" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}" data="{{projects.id}}">{{staff.fname}} {{staff.lname}}</a></p><a href="#addProjects" data-toggle="modal" ng-click="addProject(projects.id);"></a>
+                            <a href="#addProjects" data-toggle="modal" ng-click="addProject(projects.id);"></a>
+                            <p ng-repeat="staff in currenttasks.staffs" >Assigned Staff(s) - {{staff.fname}} {{staff.lname}}</p>
                         </accordion-group>
                     </accordion>
                 </div>

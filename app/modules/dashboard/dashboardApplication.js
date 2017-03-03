@@ -9,7 +9,7 @@
  
  ===========================================================*/
 
-        var dashboard = angular.module('dashboard', ['ui.router', 'ngAnimate', 'ngMaterialDatePicker']);
+        var dashboard = angular.module('dashboard', ['ui.router', 'ngAnimate', 'ngMaterialDatePicker','ngMaterial']);
 
 dashboard.config(["$stateProvider", function ($stateProvider) {
 

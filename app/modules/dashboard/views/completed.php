@@ -19,12 +19,13 @@
                 </div>
                 <div class="panel-body" style="overflow: scroll; height: 410px;">
                <accordion close-others="true">
-                        <accordion-group ng-repeat="currenttasks in currenttask">
+                        <accordion-group ng-repeat="currenttasks in completed">
                             <accordion-heading>
                                 <div id="{{currenttasks.id}}">{{currenttasks.project_name}} - {{currenttasks.task_details}}</div><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
                             </accordion-heading>
                             <p ng-repeat="staff in currenttasks.staffs" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}" data="{{projects.id}}">{{staff.fname}} {{staff.lname}}</a></p><a href="#addProjects" data-toggle="modal" ng-click="addProject(projects.id);"></a>
                         </accordion-group>
+                   <h2 ng-show="!completed.length" class="md-display-3" layout="row" layout-align="center center">No Task Found</h2>
                     </accordion>
            </div>
             </div>

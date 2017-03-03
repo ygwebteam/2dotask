@@ -30,6 +30,7 @@
                             <button class="projectmodal" id="{{clientdetail.id}}" onclick="addProject(this.id)"><i class="fa fa-plus">Add Project</i></button> <br/><br/>
                             <p ng-repeat="projects in clientdetail.projects" ><a href="javascript:;" ng-click="showProjectDetails(projects.id)" id="{{projects.id}}">{{projects.project_name}}</a></p>
                         </accordion-group>
+                        <h2 ng-show="!clientdetails.length" class="md-display-3" layout="row" layout-align="center center">No Task Found</h2>
                     </accordion>
                 </div>
             </div>

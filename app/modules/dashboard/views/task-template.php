@@ -11,24 +11,47 @@
 <section class="content">
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-info" style="min-height:453px;">
-                <div class="panel-heading">
-                    View Template
+            <!--            <div class="panel panel-info" style="min-height:453px;">
+                            <div class="panel-heading">
+                                View Template
+                            </div>
+                            <div class="panel-body" >-->
+            <md-toolbar md-scroll-shrink ng-if="true">
+                <div class="md-toolbar-tools">
+                    <h3>
+                        <span>Templates</span>
+                    </h3>
                 </div>
-                <div class="panel-body" >
-                    <md-card ng-repeat="template in templates" style="margin-bottom: 20px;">
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">{{template.text}}</span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-actions layout="row" layout-align="end center">
-                            <md-button id="{{template.id}}" onclick="editTemplate(this.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></md-button>
-                            <md-button><i class="fa fa-trash-o" aria-hidden="true"></i></md-button>
-                        </md-card-actions>
-                    </md-card>
-                </div>
-            </div>
+            </md-toolbar>
+
+            <md-content flex>
+
+                <md-list>
+                    <md-list-item class="md-3-line"  ng-repeat="template in templates">
+                        <div class="md-list-item-text">
+                            <h3 class="p-2"> {{template.text}}
+                            </h3>
+                        </div>
+                        <md-button id="{{template.id}}" onclick="editTemplate(this.id)"><i class="fa fa-pencil-square-o" ></i></md-button>
+                        <md-button><i class="fa fa-trash-o" ></i></md-button>
+                        <md-divider inset></md-divider>
+                    </md-list-item>
+                </md-list>
+
+            </md-content>
+            <!--                    <md-card ng-repeat="template in templates" style="margin-bottom: 20px;">
+                                    <md-card-title>
+                                        <md-card-title-text>
+                                            <span class="md-headline">{{template.text}}</span>
+                                        </md-card-title-text>
+                                    </md-card-title>
+                                    <md-card-actions layout="row" layout-align="end center">
+                                        <md-button id="{{template.id}}" onclick="editTemplate(this.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></md-button>
+                                        <md-button><i class="fa fa-trash-o" aria-hidden="true"></i></md-button>
+                                    </md-card-actions>
+                                </md-card>-->
+            <!--                </div>
+                        </div>-->
         </div>
         <div class="col-md-6">
             <div class="panel panel-info" style="min-height:453px;">
